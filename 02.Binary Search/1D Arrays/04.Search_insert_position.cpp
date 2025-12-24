@@ -16,7 +16,9 @@ Output: 1
 
 /*
 APPROACH:
-We can use the lower_bound function from the C++ standard library to find the index where the target should be inserted. The lower_bound function returns an iterator pointing to the first element that is not less than the target. By subtracting the beginning iterator from the lower_bound iterator, we get the index where the target should be inserted.
+We can use the lower_bound function from the C++ standard library to find the index where the target should be inserted. 
+The lower_bound function returns an iterator pointing to the first element that is not less than the target. 
+By subtracting the beginning iterator from the lower_bound iterator, we get the index where the target should be inserted.
 
 CODE:
 */
