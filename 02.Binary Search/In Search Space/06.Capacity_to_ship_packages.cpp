@@ -18,7 +18,12 @@ Explanation: A ship capacity of 15 is the minimum to ship all the packages in 5 
 5th day: 10
 
 Approach:
-To find the least weight capacity of the ship, we can use binary search. We set the low and high as the minimum and maximum weight from the weights array, respectively. Then, we iterate through the weights and check if it can be accommodated within the current capacity. If it can, we subtract the weight from the capacity. If it cannot, we increment the required number of days and update the capacity with the current weight. We continue this process until we find the minimum capacity that satisfies the given number of days.
+To find the least weight capacity of the ship, we can use binary search.
+We set the low and high as the minimum and maximum weight from the weights array, respectively. 
+Then, we iterate through the weights and check if it can be accommodated within the current capacity.
+If it can, we subtract the weight from the capacity.
+If it cannot, we increment the required number of days and update the capacity with the current weight.
+We continue this process until we find the minimum capacity that satisfies the given number of days.
 
 Code:
 */
