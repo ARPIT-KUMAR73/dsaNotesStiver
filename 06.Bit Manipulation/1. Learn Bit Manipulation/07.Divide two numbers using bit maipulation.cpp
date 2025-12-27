@@ -22,27 +22,32 @@ To divide two integers without using multiplication, division, and mod operator,
 
 CODE:*/
 
-int divideTwoInteger(int dividend, int divisor) {
-    if (dividend == divisor)
-        return 1;
+int divide(int dividend, int divisor) {
+         if (dividend == divisor)
+            return 1;
+         // overflow case
+        if (dividend == INT_MIN && divisor == -1)
+            return INT_MAX;
 
-    bool isNegative = ((dividend < 0 && divisor >= 0) || (dividend >= 0 && divisor < 0));
+         bool isNegative = ((dividend < 0 && divisor >= 0) || (dividend >= 0 && divisor < 0));
 
-    int ans = 0;
-    int a = abs(dividend);
-    int b = abs(divisor);
+          long long ans = 0;
+          long long a = llabs((long long)dividend);
+          long long b = llabs((long long)divisor);
 
-    while (a >= b) {
-        // at each stage we will find the greatest power of 2 which is smaller than the dividend
-        int q = 1;
-        while (a > (b << q))
-            q++;
-        ans += (1 << (q - 1));
-        a -= (b << (q - 1));
+
+          while(a>=b)
+          {
+             // at each stage we will find the greatest power of 2 which is smaller than the dividend
+             int q = 1;
+             while (a > (b << q))
+               q++;
+
+               ans += (1 << (q - 1));
+               a -= (b << (q - 1));
+            }
+          return (isNegative) ? -ans : ans; 
     }
-
-    return (isNegative) ? -ans : ans;
-}
 
 // Time Complexity: O(log n), where n is the absolute value of the dividend
 // Space Complexity: O(1)
